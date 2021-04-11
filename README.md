@@ -2,7 +2,7 @@
 
 Source code is located [HERE](./amway-products/pages/index.tsx) (./amway-products/pages/index.tsx)
 
-Run develop mode locally:
+Run development mode locally:
 ```
 yarn install
 yarn run dev
