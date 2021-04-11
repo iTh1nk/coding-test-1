@@ -1,6 +1,6 @@
 # Coding Tests
 
-Source code is located at ./amway-products/pages/index.tsx
+Source code is located [HERE](./amway-products/pages/index.tsx) (./amway-products/pages/index.tsx)
 
 Run develop mode locally:
 ```
