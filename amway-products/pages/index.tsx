@@ -70,6 +70,7 @@ const Home = (): ReactNode => {
             onSubmit();
           }}
         >
+          {/* Input for selecting Associate or Diamond */}
           <div>
             <label>Associate</label>
             <input
@@ -93,6 +94,7 @@ const Home = (): ReactNode => {
               }}
             />
           </div>
+          {/* Input for Kone amount */}
           <div style={{ marginBottom: "2em", marginTop: "2em" }}>
             <div style={{ marginBottom: "1em" }}>
               <label>Input Kone Amount: </label>
@@ -117,6 +119,7 @@ const Home = (): ReactNode => {
                 }}
               />
             </div>
+            {/* Input for Cartridge amount */}
             <div>
               <label>Input Ironhide Cartridge Amount: </label>
               <input
@@ -156,7 +159,7 @@ const Home = (): ReactNode => {
             </div>
             <h2 style={{ marginTop: ".5em", color: "green" }}>
               <label>Result: </label>
-              <span>${result.toFixed(2)}</span>
+              <span id="final-price">${result.toFixed(2)}</span>
             </h2>
           </div>
           <div>
