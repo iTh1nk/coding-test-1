@@ -1,0 +1,62 @@
+[
+  {
+    "recipient": "Diamond",
+    "kone": "4",
+    "cartridge": "1",
+    "result": 10779.95
+  },
+  {
+    "recipient": "Associate",
+    "kone": "4",
+    "cartridge": "1",
+    "result": 13761.65
+  },
+  {
+    "recipient": "Diamond",
+    "kone": "2",
+    "cartridge": "7",
+    "result": 8232.33
+  },
+  {
+    "recipient": "Associate",
+    "kone": "2",
+    "cartridge": "7",
+    "result": 10153.51
+  },
+  {
+    "recipient": "Diamond",
+    "kone": "10",
+    "cartridge": "12",
+    "result": 30129.82
+  },
+  {
+    "recipient": "Associate",
+    "kone": "10",
+    "cartridge": "12",
+    "result": 39187.29
+  },
+  {
+    "recipient": "Diamond",
+    "kone": "1",
+    "cartridge": "2",
+    "result": 3639.18
+  },
+  {
+    "recipient": "Associate",
+    "kone": "1",
+    "cartridge": "2",
+    "result": 4321.52
+  },
+  {
+    "recipient": "Diamond",
+    "kone": "251",
+    "cartridge": "126",
+    "result": 694355.65
+  },
+  {
+    "recipient": "Associate",
+    "kone": "251",
+    "cartridge": "126",
+    "result": 895389.47
+  }
+]

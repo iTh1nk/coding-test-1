@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import React, { ReactNode } from "react";
 
 const koneIniPrice = 3488.99;
 const konePromoPrice = 2588.99;
@@ -12,11 +12,11 @@ type Amway = {
 };
 
 const Home = (): ReactNode => {
-  const [result, setResult] = useState<number>(0);
-  const [resultArr, setArr] = useState<Array<Amway>>([]);
-  const [recipient, setRecipient] = useState<string>("None");
-  const [kone, setKone] = useState<string>("0");
-  const [cartridge, setCartridge] = useState<string>("0");
+  const [kone, setKone] = React.useState<string>("0");
+  const [cartridge, setCartridge] = React.useState<string>("0");
+  const [recipient, setRecipient] = React.useState<string>("None");
+  const [result, setResult] = React.useState<number>(0);
+  const [resultArr, setArr] = React.useState<Array<Amway>>([]);
 
   //get final price of Kone
   const finalPriceOfKone = (kone: number): number => {
@@ -43,20 +43,21 @@ const Home = (): ReactNode => {
   };
   //handle submit and return result
   const onSubmit = (): void => {
-    const koneFinalPrice: number = finalPriceOfKone(parseInt(kone));
-    const cartridgeFinalPrice: number = finalPriceOfCartridge(
-      parseInt(cartridge)
-    );
-    setResult(koneFinalPrice + cartridgeFinalPrice);
-    setArr([
-      ...resultArr,
-      {
-        level: recipient,
-        kone: parseInt(kone),
-        cartridge: parseInt(cartridge),
-        result: koneFinalPrice + cartridgeFinalPrice,
-      },
-    ]);
+    setResult(parseInt(kone) + parseInt(cartridge));
+    // const koneFinalPrice: number = finalPriceOfKone(parseInt(kone));
+    // const cartridgeFinalPrice: number = finalPriceOfCartridge(
+    //   parseInt(cartridge)
+    // );
+    // setResult(koneFinalPrice + cartridgeFinalPrice);
+    // setArr([
+    //   ...resultArr,
+    //   {
+    //     level: recipient,
+    //     kone: parseInt(kone),
+    //     cartridge: parseInt(cartridge),
+    //     result: koneFinalPrice + cartridgeFinalPrice,
+    //   },
+    // ]);
   };
 
   return (
@@ -76,6 +77,7 @@ const Home = (): ReactNode => {
             <input
               style={{ marginRight: "2em" }}
               name="recipient"
+              id="recipient-associate"
               type="radio"
               value="Associate"
               onChange={(e) => {
@@ -87,6 +89,7 @@ const Home = (): ReactNode => {
             <input
               type="radio"
               name="recipient"
+              id="recipient-diamond"
               value="Diamond"
               onChange={(e) => {
                 setRecipient(e.target.value);
@@ -99,6 +102,8 @@ const Home = (): ReactNode => {
             <div style={{ marginBottom: "1em" }}>
               <label>Input Kone Amount: </label>
               <input
+                id="amount-kone"
+                name="kone"
                 type="text"
                 placeholder="Numbers only"
                 onChange={(e) => {
@@ -123,6 +128,8 @@ const Home = (): ReactNode => {
             <div>
               <label>Input Ironhide Cartridge Amount: </label>
               <input
+                id="amount-cartridge"
+                name="cartridge"
                 type="text"
                 placeholder="Numbers only"
                 onChange={(e) => {
@@ -159,7 +166,7 @@ const Home = (): ReactNode => {
             </div>
             <h2 style={{ marginTop: ".5em", color: "green" }}>
               <label>Result: </label>
-              <span id="final-price">${result.toFixed(2)}</span>
+              <span id="final-price">¥{result.toFixed(2)}</span>
             </h2>
           </div>
           <div>
@@ -181,7 +188,9 @@ const Home = (): ReactNode => {
             </button>
             <button
               style={{ fontSize: "1.2em", backgroundColor: "lightgreen" }}
-              type="submit"
+              type="button"
+              onClick={() => onSubmit()}
+              id="btn-calculate"
             >
               Calculate
             </button>
